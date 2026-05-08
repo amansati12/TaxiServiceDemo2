@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TaxiGo Fleet – Browse our Sedan, SUV, Luxury and Mini car options with pricing and features." />
+  <title>Our Fleet | TaxiGo – Premium Taxi Service</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚕</text></svg>" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <style>
+    .fleet-filter-btn { background: transparent; border: 2px solid #EAEAEA; color: var(--gray); font-family: var(--font-heading); font-weight: 700; font-size: .9rem; letter-spacing: .05em; padding: 10px 24px; border-radius: 50px; cursor: pointer; transition: var(--transition); }
+    .fleet-filter-btn.active, .fleet-filter-btn:hover { background: var(--yellow); border-color: var(--yellow); color: var(--black); }
+  </style>
+</head>
+<body>
+<div id="preloader"><div class="preloader-inner"><div class="preloader-logo">TAXI<span style="color:#fff">GO</span></div><div class="preloader-bar"><div class="preloader-bar-inner"></div></div></div></div>
+
+<nav class="navbar-custom fixed-top">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between w-100">
+      <a href="index.html" class="navbar-brand-custom"><div class="brand-icon"><i class="fas fa-taxi"></i></div>TAXI<span>GO</span></a>
+      <div class="d-none d-lg-flex align-items-center">
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="services.html" class="nav-link-custom">Services</a>
+        <a href="fleet.html" class="nav-link-custom active">Fleet</a>
+        <a href="tours.html" class="nav-link-custom">Tours</a>
+        <a href="airport.html" class="nav-link-custom">Airport</a>
+        <a href="blog.html" class="nav-link-custom">Blog</a>
+        <a href="contact.html" class="nav-link-custom">Contact</a>
+        <a href="booking.html" class="nav-link-custom nav-cta"><i class="fas fa-car me-1"></i> Book Now</a>
+      </div>
+      <button class="navbar-toggler-custom d-lg-none"><span></span><span></span><span></span></button>
+    </div>
+    <div class="d-lg-none" id="navMenu" style="display:none !important;">
+      <div style="padding:16px 0;border-top:1px solid rgba(255,255,255,0.08);margin-top:8px;">
+        <a href="index.html" class="nav-link-custom d-block" style="padding:10px 0 !important;">Home</a>
+        <a href="about.html" class="nav-link-custom d-block" style="padding:10px 0 !important;">About</a>
+        <a href="services.html" class="nav-link-custom d-block" style="padding:10px 0 !important;">Services</a>
+        <a href="fleet.html" class="nav-link-custom d-block" style="padding:10px 0 !important;">Fleet</a>
+        <a href="booking.html" class="btn-yellow d-inline-flex mt-2"><i class="fas fa-car"></i> Book Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="container position-relative" style="z-index:2;">
+    <div class="breadcrumb-custom mb-3"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Our Fleet</span></div>
+    <h1 class="section-title" style="color:#fff;font-size:clamp(2.5rem,6vw,4.5rem);">Our <span>Fleet</span></h1>
+    <p style="color:rgba(255,255,255,0.55);max-width:500px;margin-top:12px;">Every vehicle is regularly serviced, deep-cleaned, and inspected for your safety and comfort.</p>
+  </div>
+</section>
+
+<!-- FLEET FILTER -->
+<section>
+  <div class="container">
+    <!-- Filter Buttons -->
+    <div class="d-flex gap-3 justify-content-center flex-wrap mb-5">
+      <button class="fleet-filter-btn active" data-filter="all">All Vehicles</button>
+      <button class="fleet-filter-btn" data-filter="economy">Economy</button>
+      <button class="fleet-filter-btn" data-filter="suv">SUV / MPV</button>
+      <button class="fleet-filter-btn" data-filter="luxury">Luxury</button>
+      <button class="fleet-filter-btn" data-filter="mini">Mini</button>
+    </div>
+    <div class="row g-4">
+      <!-- Sedan 1 -->
+      <div class="col-md-6 col-lg-4 fleet-item animate-on-scroll" data-category="economy">
+        <div class="fleet-card">
+          <div class="fleet-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=700&q=80" alt="Swift Dzire" class="fleet-image" />
+            <div class="fleet-badge">Economy</div>
+          </div>
+          <div class="fleet-body">
+            <h4>Swift Dzire</h4>
+            <p style="color:var(--gray);font-size:.875rem;">The most popular sedan for city travel. Fuel-efficient, comfortable and always available.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature"><i class="fas fa-user-group"></i> 4 Seats</div>
+              <div class="fleet-feature"><i class="fas fa-snowflake"></i> AC</div>
+              <div class="fleet-feature"><i class="fas fa-music"></i> Music</div>
+              <div class="fleet-feature"><i class="fas fa-suitcase"></i> 2 Bags</div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fleet-price">₹12<span>/km</span></div>
+              <a href="booking.html" class="btn-yellow" style="padding:10px 20px;font-size:.875rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sedan 2 -->
+      <div class="col-md-6 col-lg-4 fleet-item animate-on-scroll delay-1" data-category="economy">
+        <div class="fleet-card">
+          <div class="fleet-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=700&q=80" alt="Honda City" class="fleet-image" />
+            <div class="fleet-badge">Economy</div>
+          </div>
+          <div class="fleet-body">
+            <h4>Honda City</h4>
+            <p style="color:var(--gray);font-size:.875rem;">A premium sedan experience at an economy price. Smooth ride, great boot space.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature"><i class="fas fa-user-group"></i> 4 Seats</div>
+              <div class="fleet-feature"><i class="fas fa-snowflake"></i> AC</div>
+              <div class="fleet-feature"><i class="fas fa-wifi"></i> Wi-Fi</div>
+              <div class="fleet-feature"><i class="fas fa-suitcase"></i> 3 Bags</div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fleet-price">₹14<span>/km</span></div>
+              <a href="booking.html" class="btn-yellow" style="padding:10px 20px;font-size:.875rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SUV 1 -->
+      <div class="col-md-6 col-lg-4 fleet-item animate-on-scroll delay-2" data-category="suv">
+        <div class="fleet-card">
+          <div class="fleet-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=700&q=80" alt="Toyota Innova" class="fleet-image" />
+            <div class="fleet-badge" style="background:var(--orange);">Popular</div>
+          </div>
+          <div class="fleet-body">
+            <h4>Toyota Innova</h4>
+            <p style="color:var(--gray);font-size:.875rem;">India's favourite MPV. Spacious seating for families and groups with large luggage capacity.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature"><i class="fas fa-user-group"></i> 6 Seats</div>
+              <div class="fleet-feature"><i class="fas fa-snowflake"></i> AC</div>
+              <div class="fleet-feature"><i class="fas fa-wifi"></i> Wi-Fi</div>
+              <div class="fleet-feature"><i class="fas fa-suitcase"></i> 5 Bags</div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fleet-price">₹18<span>/km</span></div>
+              <a href="booking.html" class="btn-yellow" style="padding:10px 20px;font-size:.875rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SUV 2 -->
+      <div class="col-md-6 col-lg-4 fleet-item animate-on-scroll" data-category="suv">
+        <div class="fleet-card">
+          <div class="fleet-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=700&q=80" alt="Kia Carens" class="fleet-image" />
+            <div class="fleet-badge" style="background:var(--orange);">SUV</div>
+          </div>
+          <div class="fleet-body">
+            <h4>Kia Carens</h4>
+            <p style="color:var(--gray);font-size:.875rem;">Modern design, panoramic sunroof, captain seats — family travel at its finest.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature"><i class="fas fa-user-group"></i> 7 Seats</div>
+              <div class="fleet-feature"><i class="fas fa-snowflake"></i> AC</div>
+              <div class="fleet-feature"><i class="fas fa-wifi"></i> Wi-Fi</div>
+              <div class="fleet-feature"><i class="fas fa-charging-station"></i> USB</div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fleet-price">₹20<span>/km</span></div>
+              <a href="booking.html" class="btn-yellow" style="padding:10px 20px;font-size:.875rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Luxury 1 -->
+      <div class="col-md-6 col-lg-4 fleet-item animate-on-scroll delay-1" data-category="luxury">
+        <div class="fleet-card">
+          <div class="fleet-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=700&q=80" alt="Mercedes E-Class" class="fleet-image" />
+            <div class="fleet-badge" style="background:var(--dark);">Luxury</div>
+          </div>
+          <div class="fleet-body">
+            <h4>Mercedes E-Class</h4>
+            <p style="color:var(--gray);font-size:.875rem;">The pinnacle of executive travel. Leather interiors, privacy glass, and a personal chauffeur.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature"><i class="fas fa-user-group"></i> 4 Seats</div>
+              <div class="fleet-feature"><i class="fas fa-star"></i> Premium</div>
+              <div class="fleet-feature"><i class="fas fa-wine-glass"></i> Amenities</div>
+              <div class="fleet-feature"><i class="fas fa-eye-slash"></i> Privacy</div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fleet-price">₹35<span>/km</span></div>
+              <a href="booking.html" class="btn-yellow" style="padding:10px 20px;font-size:.875rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Mini -->
+      <div class="col-md-6 col-lg-4 fleet-item animate-on-scroll delay-2" data-category="mini">
+        <div class="fleet-card">
+          <div class="fleet-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=700&q=80" alt="Wagon R" class="fleet-image" />
+            <div class="fleet-badge" style="background:var(--yellow);color:var(--black);">Mini</div>
+          </div>
+          <div class="fleet-body">
+            <h4>Wagon R / Alto</h4>
+            <p style="color:var(--gray);font-size:.875rem;">Budget-friendly rides for quick solo trips. Zippy, easy to park, and super affordable.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature"><i class="fas fa-user-group"></i> 3 Seats</div>
+              <div class="fleet-feature"><i class="fas fa-snowflake"></i> AC</div>
+              <div class="fleet-feature"><i class="fas fa-leaf"></i> Eco</div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fleet-price">₹8<span>/km</span></div>
+              <a href="booking.html" class="btn-yellow" style="padding:10px 20px;font-size:.875rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Luxury 2 -->
+      <div class="col-md-6 col-lg-4 fleet-item animate-on-scroll" data-category="luxury">
+        <div class="fleet-card">
+          <div class="fleet-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=700&q=80" alt="BMW 5 Series" class="fleet-image" />
+            <div class="fleet-badge" style="background:var(--dark);">Luxury</div>
+          </div>
+          <div class="fleet-body">
+            <h4>BMW 5 Series</h4>
+            <p style="color:var(--gray);font-size:.875rem;">Sport and luxury combined. Ideal for high-profile clients who want to arrive in style.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature"><i class="fas fa-user-group"></i> 4 Seats</div>
+              <div class="fleet-feature"><i class="fas fa-star"></i> Premium</div>
+              <div class="fleet-feature"><i class="fas fa-music"></i> Audio</div>
+              <div class="fleet-feature"><i class="fas fa-wifi"></i> Wi-Fi</div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fleet-price">₹40<span>/km</span></div>
+              <a href="booking.html" class="btn-yellow" style="padding:10px 20px;font-size:.875rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Economy 3 -->
+      <div class="col-md-6 col-lg-4 fleet-item animate-on-scroll delay-1" data-category="economy">
+        <div class="fleet-card">
+          <div class="fleet-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1580274437636-1c8a3cc71001?w=700&q=80" alt="Hyundai Aura" class="fleet-image" />
+            <div class="fleet-badge">Economy</div>
+          </div>
+          <div class="fleet-body">
+            <h4>Hyundai Aura</h4>
+            <p style="color:var(--gray);font-size:.875rem;">Stylish and comfortable economy sedan. Perfect for business and personal travel alike.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature"><i class="fas fa-user-group"></i> 4 Seats</div>
+              <div class="fleet-feature"><i class="fas fa-snowflake"></i> AC</div>
+              <div class="fleet-feature"><i class="fas fa-charging-station"></i> USB</div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fleet-price">₹12<span>/km</span></div>
+              <a href="booking.html" class="btn-yellow" style="padding:10px 20px;font-size:.875rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SUV 3 -->
+      <div class="col-md-6 col-lg-4 fleet-item animate-on-scroll delay-2" data-category="suv">
+        <div class="fleet-card">
+          <div class="fleet-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=700&q=80" alt="Fortuner" class="fleet-image" />
+            <div class="fleet-badge" style="background:var(--orange);">Premium SUV</div>
+          </div>
+          <div class="fleet-body">
+            <h4>Toyota Fortuner</h4>
+            <p style="color:var(--gray);font-size:.875rem;">For those who want the commanding presence of an SUV with premium comfort features.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature"><i class="fas fa-user-group"></i> 7 Seats</div>
+              <div class="fleet-feature"><i class="fas fa-mountain"></i> 4WD</div>
+              <div class="fleet-feature"><i class="fas fa-star"></i> Premium</div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fleet-price">₹28<span>/km</span></div>
+              <a href="booking.html" class="btn-yellow" style="padding:10px 20px;font-size:.875rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLEET FEATURES -->
+<section style="background:var(--dark);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title" style="color:#fff;">Every Vehicle <span>Comes With</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-3 text-center animate-on-scroll">
+        <div style="width:64px;height:64px;background:rgba(245,197,24,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><i class="fas fa-snowflake" style="font-size:1.4rem;color:var(--yellow);"></i></div>
+        <h6 style="color:#fff;font-weight:700;">Air Conditioning</h6>
+        <p style="color:rgba(255,255,255,0.4);font-size:.8rem;">All vehicles fully AC</p>
+      </div>
+      <div class="col-6 col-md-3 text-center animate-on-scroll delay-1">
+        <div style="width:64px;height:64px;background:rgba(245,197,24,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><i class="fas fa-shield-halved" style="font-size:1.4rem;color:var(--yellow);"></i></div>
+        <h6 style="color:#fff;font-weight:700;">Insurance Covered</h6>
+        <p style="color:rgba(255,255,255,0.4);font-size:.8rem;">Passenger & vehicle</p>
+      </div>
+      <div class="col-6 col-md-3 text-center animate-on-scroll delay-2">
+        <div style="width:64px;height:64px;background:rgba(245,197,24,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><i class="fas fa-broom" style="font-size:1.4rem;color:var(--yellow);"></i></div>
+        <h6 style="color:#fff;font-weight:700;">Sanitized Daily</h6>
+        <p style="color:rgba(255,255,255,0.4);font-size:.8rem;">Deep cleaned every day</p>
+      </div>
+      <div class="col-6 col-md-3 text-center animate-on-scroll delay-3">
+        <div style="width:64px;height:64px;background:rgba(245,197,24,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><i class="fas fa-map-location-dot" style="font-size:1.4rem;color:var(--yellow);"></i></div>
+        <h6 style="color:#fff;font-weight:700;">GPS Tracking</h6>
+        <p style="color:rgba(255,255,255,0.4);font-size:.8rem;">Real-time live location</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      <div class="col-lg-8 mb-4 mb-lg-0">
+        <h2>Found Your Ideal Ride?</h2>
+        <p>Book in seconds and your driver will be at your door.</p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a href="booking.html" class="btn-dark-custom"><i class="fas fa-car"></i> Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6"><a href="index.html" class="footer-brand"><i class="fas fa-taxi me-1" style="color:#F5C518;font-size:1.5rem;"></i>TAXI<span>GO</span></a><p class="footer-desc">Premium taxi service for every need and every budget.</p><div class="social-links"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div class="col-lg-2 col-6"><h6 class="footer-heading">Quick Links</h6><ul class="footer-links"><li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li><li><a href="fleet.html"><i class="fas fa-chevron-right"></i> Fleet</a></li><li><a href="booking.html"><i class="fas fa-chevron-right"></i> Book Now</a></li></ul></div>
+      <div class="col-lg-2 col-6"><h6 class="footer-heading">Services</h6><ul class="footer-links"><li><a href="services.html"><i class="fas fa-chevron-right"></i> Local Taxi</a></li><li><a href="airport.html"><i class="fas fa-chevron-right"></i> Airport</a></li><li><a href="tours.html"><i class="fas fa-chevron-right"></i> Tours</a></li></ul></div>
+      <div class="col-lg-4 col-md-6"><h6 class="footer-heading">Contact Info</h6><div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+919876543210" style="color:rgba(255,255,255,0.45);text-decoration:none;">+91 98765 43210</a></span></div><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>hello@taxigo.in</span></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p class="footer-bottom-text mb-0">© 2025 <a href="index.html">TaxiGo</a>. All Rights Reserved.</p></div></div>
+</footer>
+<button id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

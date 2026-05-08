@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a taxi with TaxiGo – easy online cab booking with instant confirmation." />
+  <title>Book a Ride | TaxiGo – Premium Taxi Service</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚕</text></svg>" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+<div id="preloader"><div class="preloader-inner"><div class="preloader-logo">TAXI<span style="color:#fff">GO</span></div><div class="preloader-bar"><div class="preloader-bar-inner"></div></div></div></div>
+
+<nav class="navbar-custom fixed-top">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between w-100">
+      <a href="index.html" class="navbar-brand-custom"><div class="brand-icon"><i class="fas fa-taxi"></i></div>TAXI<span>GO</span></a>
+      <div class="d-none d-lg-flex align-items-center">
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="services.html" class="nav-link-custom">Services</a>
+        <a href="fleet.html" class="nav-link-custom">Fleet</a>
+        <a href="tours.html" class="nav-link-custom">Tours</a>
+        <a href="airport.html" class="nav-link-custom">Airport</a>
+        <a href="blog.html" class="nav-link-custom">Blog</a>
+        <a href="contact.html" class="nav-link-custom">Contact</a>
+        <a href="booking.html" class="nav-link-custom nav-cta active"><i class="fas fa-car me-1"></i> Book Now</a>
+      </div>
+      <button class="navbar-toggler-custom d-lg-none"><span></span><span></span><span></span></button>
+    </div>
+    <div class="d-lg-none" id="navMenu" style="display:none !important;">
+      <div style="padding:16px 0;border-top:1px solid rgba(255,255,255,0.08);margin-top:8px;">
+        <a href="index.html" class="nav-link-custom d-block" style="padding:10px 0 !important;">Home</a>
+        <a href="about.html" class="nav-link-custom d-block" style="padding:10px 0 !important;">About</a>
+        <a href="services.html" class="nav-link-custom d-block" style="padding:10px 0 !important;">Services</a>
+        <a href="fleet.html" class="nav-link-custom d-block" style="padding:10px 0 !important;">Fleet</a>
+        <a href="booking.html" class="btn-yellow d-inline-flex mt-2"><i class="fas fa-car"></i> Book Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- BOOKING HERO -->
+<section class="booking-hero">
+  <div class="container position-relative" style="z-index:2;">
+    <div class="breadcrumb-custom mb-3"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Book a Ride</span></div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(3rem,7vw,5.5rem);color:#fff;line-height:.95;letter-spacing:.03em;">BOOK YOUR <span style="color:var(--yellow);">RIDE</span></h1>
+    <p style="color:rgba(255,255,255,0.55);margin-top:16px;font-size:1.05rem;">Fill in the details below and we'll confirm your booking instantly.</p>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+<section style="background:var(--gray-light);margin-top:-40px;">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <!-- BOOKING FORM -->
+      <div class="col-lg-8">
+        <div class="booking-form-wrapper">
+          <h2><i class="fas fa-taxi me-2" style="color:var(--yellow-dark);"></i>Taxi Booking Form</h2>
+          <p style="color:var(--gray);margin-bottom:32px;">All fields marked with <span style="color:#dc3545;">*</span> are required.</p>
+
+          <!-- SUCCESS MESSAGE -->
+          <div id="bookingSuccess" style="display:none;">
+            <div style="text-align:center;padding:48px 32px;background:linear-gradient(135deg,#f0fff4,#d1fae5);border-radius:16px;border:2px solid #34d399;">
+              <div style="width:80px;height:80px;background:var(--yellow);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;">✓</div>
+              <h3 style="color:var(--black);font-weight:800;margin-bottom:12px;">Booking Confirmed!</h3>
+              <p style="color:#065f46;font-size:1.05rem;max-width:400px;margin:0 auto 24px;">Thank you! Your booking request has been received. Our team will call you within 15 minutes to confirm your ride details.</p>
+              <div style="background:#fff;border-radius:12px;padding:20px;max-width:320px;margin:0 auto 24px;">
+                <div style="font-size:.75rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">Booking Reference</div>
+                <div style="font-family:var(--font-display);font-size:2rem;color:var(--yellow-dark);letter-spacing:.1em;" id="bookingRef">TXG-2025-0001</div>
+              </div>
+              <a href="index.html" class="btn-yellow"><i class="fas fa-home"></i> Back to Home</a>
+            </div>
+          </div>
+
+          <form id="bookingForm" novalidate>
+
+            <!-- Step 1: Trip Details -->
+            <div style="background:var(--gray-light);border-radius:12px;padding:24px;margin-bottom:28px;">
+              <h5 style="font-weight:800;color:var(--black);margin-bottom:20px;display:flex;align-items:center;gap:10px;"><span style="width:28px;height:28px;background:var(--yellow);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;">1</span> Trip Details</h5>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label-custom">Pickup Location <span style="color:#dc3545;">*</span></label>
+                  <div class="position-relative">
+                    <input type="text" name="pickup" class="form-control-custom" placeholder="Enter full pickup address" style="padding-left:44px;" required />
+                    <i class="fas fa-map-marker-alt" style="position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--yellow-dark);"></i>
+                  </div>
+                  <div class="invalid-feedback">Please enter your pickup location.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label-custom">Drop Location <span style="color:#dc3545;">*</span></label>
+                  <div class="position-relative">
+                    <input type="text" name="dropoff" class="form-control-custom" placeholder="Enter full destination address" style="padding-left:44px;" required />
+                    <i class="fas fa-map-pin" style="position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--black);"></i>
+                  </div>
+                  <div class="invalid-feedback">Please enter your drop location.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label-custom">Travel Date <span style="color:#dc3545;">*</span></label>
+                  <div class="position-relative">
+                    <input type="date" name="date" class="form-control-custom" style="padding-left:44px;" required />
+                    <i class="fas fa-calendar" style="position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--yellow-dark);"></i>
+                  </div>
+                  <div class="invalid-feedback">Please select a valid future date.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label-custom">Pickup Time <span style="color:#dc3545;">*</span></label>
+                  <div class="position-relative">
+                    <input type="time" name="time" class="form-control-custom" style="padding-left:44px;" required />
+                    <i class="fas fa-clock" style="position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--yellow-dark);"></i>
+                  </div>
+                  <div class="invalid-feedback">Please select a pickup time.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label-custom">Trip Type</label>
+                  <select name="triptype" class="form-control-custom">
+                    <option value="oneway">One Way</option>
+                    <option value="roundtrip">Round Trip</option>
+                    <option value="hourly">Hourly Rental</option>
+                    <option value="airport">Airport Transfer</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label-custom">No. of Passengers</label>
+                  <select name="passengers" class="form-control-custom">
+                    <option>1 Passenger</option>
+                    <option>2 Passengers</option>
+                    <option>3 Passengers</option>
+                    <option>4 Passengers</option>
+                    <option>5 Passengers</option>
+                    <option>6 Passengers</option>
+                    <option>7+ Passengers</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Vehicle Selection -->
+            <div style="background:var(--gray-light);border-radius:12px;padding:24px;margin-bottom:28px;">
+              <h5 style="font-weight:800;color:var(--black);margin-bottom:20px;display:flex;align-items:center;gap:10px;"><span style="width:28px;height:28px;background:var(--yellow);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;">2</span> Select Vehicle Type <span style="color:#dc3545;">*</span></h5>
+              <div class="row g-3">
+                <div class="col-6 col-sm-3">
+                  <label class="vehicle-option">
+                    <input type="radio" name="vehicle" value="mini" />
+                    <i class="fas fa-car-side"></i>
+                    <span>Mini</span>
+                    <div style="font-size:.72rem;color:var(--gray);margin-top:4px;">₹8/km</div>
+                  </label>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <label class="vehicle-option">
+                    <input type="radio" name="vehicle" value="sedan" />
+                    <i class="fas fa-car"></i>
+                    <span>Sedan</span>
+                    <div style="font-size:.72rem;color:var(--gray);margin-top:4px;">₹12/km</div>
+                  </label>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <label class="vehicle-option">
+                    <input type="radio" name="vehicle" value="suv" />
+                    <i class="fas fa-truck-monster" style="font-size:1.5rem !important;"></i>
+                    <span>SUV</span>
+                    <div style="font-size:.72rem;color:var(--gray);margin-top:4px;">₹18/km</div>
+                  </label>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <label class="vehicle-option">
+                    <input type="radio" name="vehicle" value="luxury" />
+                    <i class="fas fa-star"></i>
+                    <span>Luxury</span>
+                    <div style="font-size:.72rem;color:var(--gray);margin-top:4px;">₹35/km</div>
+                  </label>
+                </div>
+              </div>
+              <div id="vehicleError" style="display:none;font-size:.78rem;color:#dc3545;margin-top:8px;"><i class="fas fa-exclamation-circle me-1"></i>Please select a vehicle type.</div>
+            </div>
+
+            <!-- Step 3: Passenger Details -->
+            <div style="background:var(--gray-light);border-radius:12px;padding:24px;margin-bottom:28px;">
+              <h5 style="font-weight:800;color:var(--black);margin-bottom:20px;display:flex;align-items:center;gap:10px;"><span style="width:28px;height:28px;background:var(--yellow);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;">3</span> Passenger Details</h5>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label class="form-label-custom">Full Name <span style="color:#dc3545;">*</span></label>
+                  <div class="position-relative">
+                    <input type="text" name="name" class="form-control-custom" placeholder="Your full name" style="padding-left:44px;" required />
+                    <i class="fas fa-user" style="position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--yellow-dark);"></i>
+                  </div>
+                  <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label-custom">Phone Number <span style="color:#dc3545;">*</span></label>
+                  <div class="position-relative">
+                    <input type="tel" name="phone" class="form-control-custom" placeholder="+91 98765 43210" style="padding-left:44px;" required />
+                    <i class="fas fa-phone" style="position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--yellow-dark);"></i>
+                  </div>
+                  <div class="invalid-feedback">Please enter a valid phone number.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label-custom">Email Address <span style="color:#dc3545;">*</span></label>
+                  <div class="position-relative">
+                    <input type="email" name="email" class="form-control-custom" placeholder="your@email.com" style="padding-left:44px;" required />
+                    <i class="fas fa-envelope" style="position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--yellow-dark);"></i>
+                  </div>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label-custom">Special Instructions / Notes</label>
+                  <textarea name="notes" class="form-control-custom" rows="3" placeholder="Any special requirements, preferred route, luggage details, etc." style="height:auto;resize:vertical;"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Terms & Submit -->
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:24px;">
+              <input type="checkbox" id="terms" style="margin-top:3px;accent-color:var(--yellow-dark);width:16px;height:16px;cursor:pointer;" required />
+              <label for="terms" style="font-size:.875rem;color:var(--gray);cursor:pointer;">I agree to TaxiGo's <a href="#" style="color:var(--yellow-dark);font-weight:600;">Terms of Service</a> and <a href="#" style="color:var(--yellow-dark);font-weight:600;">Privacy Policy</a>. I consent to being contacted regarding my booking.</label>
+            </div>
+
+            <button type="submit" class="btn-yellow" style="width:100%;justify-content:center;font-size:1.05rem;padding:16px;">
+              <i class="fas fa-car"></i> Confirm Booking
+            </button>
+
+            <p style="text-align:center;font-size:.8rem;color:var(--gray);margin-top:16px;"><i class="fas fa-shield-halved" style="color:var(--yellow-dark);"></i> Your details are encrypted and 100% secure. We never share your information.</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- SIDEBAR INFO -->
+      <div class="col-lg-4">
+        <!-- Why Book Online -->
+        <div style="background:var(--dark);border-radius:var(--radius-lg);padding:28px;margin-bottom:24px;">
+          <h5 style="color:var(--yellow);font-family:var(--font-heading);font-size:1.1rem;margin-bottom:20px;"><i class="fas fa-bolt me-2"></i>Why Book Online?</h5>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;"><div style="width:36px;height:36px;background:rgba(245,197,24,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-tag" style="color:var(--yellow);font-size:.85rem;"></i></div><div><div style="color:#fff;font-size:.9rem;font-weight:600;margin-bottom:2px;">Best Price Guaranteed</div><div style="color:rgba(255,255,255,0.45);font-size:.8rem;">Online bookings get priority pricing</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><div style="width:36px;height:36px;background:rgba(245,197,24,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-check-circle" style="color:var(--yellow);font-size:.85rem;"></i></div><div><div style="color:#fff;font-size:.9rem;font-weight:600;margin-bottom:2px;">Instant Confirmation</div><div style="color:rgba(255,255,255,0.45);font-size:.8rem;">Booking confirmed in under 15 minutes</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><div style="width:36px;height:36px;background:rgba(245,197,24,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-undo" style="color:var(--yellow);font-size:.85rem;"></i></div><div><div style="color:#fff;font-size:.9rem;font-weight:600;margin-bottom:2px;">Free Cancellation</div><div style="color:rgba(255,255,255,0.45);font-size:.8rem;">Cancel up to 2 hours before pickup</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><div style="width:36px;height:36px;background:rgba(245,197,24,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-credit-card" style="color:var(--yellow);font-size:.85rem;"></i></div><div><div style="color:#fff;font-size:.9rem;font-weight:600;margin-bottom:2px;">Pay Later Option</div><div style="color:rgba(255,255,255,0.45);font-size:.8rem;">Pay cash or online after the ride</div></div></div>
+          </div>
+        </div>
+
+        <!-- Call Instead -->
+        <div style="background:var(--yellow);border-radius:var(--radius-lg);padding:28px;text-align:center;margin-bottom:24px;">
+          <i class="fas fa-phone" style="font-size:2rem;color:var(--black);margin-bottom:12px;display:block;"></i>
+          <h5 style="font-weight:800;color:var(--black);margin-bottom:6px;">Prefer to Call?</h5>
+          <p style="color:rgba(0,0,0,0.6);font-size:.875rem;margin-bottom:16px;">Our booking team is available 24/7 for instant cab reservations.</p>
+          <a href="tel:+919876543210" class="btn-dark-custom" style="width:100%;justify-content:center;">+91 98765 43210</a>
+        </div>
+
+        <!-- Fare Estimator -->
+        <div style="background:var(--white);border:2px solid #EAEAEA;border-radius:var(--radius-lg);padding:28px;">
+          <h5 style="font-weight:800;color:var(--black);margin-bottom:4px;"><i class="fas fa-calculator me-2" style="color:var(--yellow-dark);"></i>Quick Fare Estimate</h5>
+          <p style="color:var(--gray);font-size:.8rem;margin-bottom:16px;">Base rates per km (excluding tolls & parking):</p>
+          <table style="width:100%;font-size:.875rem;">
+            <tr style="border-bottom:1px solid #EAEAEA;">
+              <td style="padding:10px 0;color:var(--dark);font-weight:600;"><i class="fas fa-car-side" style="color:var(--yellow-dark);margin-right:8px;"></i>Mini</td>
+              <td style="padding:10px 0;text-align:right;font-family:var(--font-heading);font-size:1rem;font-weight:800;color:var(--yellow-dark);">₹8/km</td>
+            </tr>
+            <tr style="border-bottom:1px solid #EAEAEA;">
+              <td style="padding:10px 0;color:var(--dark);font-weight:600;"><i class="fas fa-car" style="color:var(--yellow-dark);margin-right:8px;"></i>Sedan</td>
+              <td style="padding:10px 0;text-align:right;font-family:var(--font-heading);font-size:1rem;font-weight:800;color:var(--yellow-dark);">₹12/km</td>
+            </tr>
+            <tr style="border-bottom:1px solid #EAEAEA;">
+              <td style="padding:10px 0;color:var(--dark);font-weight:600;"><i class="fas fa-van-shuttle" style="color:var(--yellow-dark);margin-right:8px;"></i>SUV</td>
+              <td style="padding:10px 0;text-align:right;font-family:var(--font-heading);font-size:1rem;font-weight:800;color:var(--yellow-dark);">₹18/km</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 0;color:var(--dark);font-weight:600;"><i class="fas fa-star" style="color:var(--yellow-dark);margin-right:8px;"></i>Luxury</td>
+              <td style="padding:10px 0;text-align:right;font-family:var(--font-heading);font-size:1rem;font-weight:800;color:var(--yellow-dark);">₹35/km</td>
+            </tr>
+          </table>
+          <div style="background:var(--yellow-light);border-radius:8px;padding:12px;margin-top:16px;font-size:.78rem;color:var(--yellow-dark);"><i class="fas fa-info-circle me-1"></i> Night charges (10 PM – 6 AM) carry a 15% surcharge. Airport parking included in airport transfer fares.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<section style="background:var(--white);padding:50px 0;">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3">
+        <div style="font-size:2rem;color:var(--yellow-dark);margin-bottom:10px;"><i class="fas fa-shield-halved"></i></div>
+        <h6 style="font-weight:700;font-size:.9rem;">100% Safe</h6>
+        <p style="font-size:.78rem;color:var(--gray);">Verified & background-checked drivers</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div style="font-size:2rem;color:var(--yellow-dark);margin-bottom:10px;"><i class="fas fa-lock"></i></div>
+        <h6 style="font-weight:700;font-size:.9rem;">Secure Payments</h6>
+        <p style="font-size:.78rem;color:var(--gray);">Encrypted & 100% secure transactions</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div style="font-size:2rem;color:var(--yellow-dark);margin-bottom:10px;"><i class="fas fa-clock"></i></div>
+        <h6 style="font-weight:700;font-size:.9rem;">On-Time Pickup</h6>
+        <p style="font-size:.78rem;color:var(--gray);">Driver arrives before your scheduled time</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div style="font-size:2rem;color:var(--yellow-dark);margin-bottom:10px;"><i class="fas fa-headset"></i></div>
+        <h6 style="font-weight:700;font-size:.9rem;">24/7 Support</h6>
+        <p style="font-size:.78rem;color:var(--gray);">Round-the-clock customer assistance</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6"><a href="index.html" class="footer-brand"><i class="fas fa-taxi me-1" style="color:#F5C518;font-size:1.5rem;"></i>TAXI<span>GO</span></a><p class="footer-desc">Premium taxi service — safe, comfortable, and always on time.</p><div class="social-links"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div class="col-lg-2 col-6"><h6 class="footer-heading">Quick Links</h6><ul class="footer-links"><li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li><li><a href="fleet.html"><i class="fas fa-chevron-right"></i> Fleet</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
+      <div class="col-lg-2 col-6"><h6 class="footer-heading">Services</h6><ul class="footer-links"><li><a href="services.html"><i class="fas fa-chevron-right"></i> Local Taxi</a></li><li><a href="airport.html"><i class="fas fa-chevron-right"></i> Airport</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Outstation</a></li><li><a href="tours.html"><i class="fas fa-chevron-right"></i> Tours</a></li></ul></div>
+      <div class="col-lg-4 col-md-6"><h6 class="footer-heading">Contact Info</h6><div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>12, Panchvati Society, Satellite Road, Ahmedabad, Gujarat – 380015</span></div><div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+919876543210" style="color:rgba(255,255,255,0.45);text-decoration:none;">+91 98765 43210</a></span></div><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>hello@taxigo.in</span></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p class="footer-bottom-text mb-0">© 2025 <a href="index.html">TaxiGo</a>. All Rights Reserved.</p></div></div>
+</footer>
+<button id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Generate random booking reference
+  document.addEventListener('DOMContentLoaded', () => {
+    const ref = 'TXG-2025-' + Math.floor(1000 + Math.random() * 9000);
+    const el = document.getElementById('bookingRef');
+    if (el) el.textContent = ref;
+  });
+</script>
+</body>
+</html>
